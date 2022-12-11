@@ -1,0 +1,313 @@
+Ad Soyad: Mert Kaan Kindar
+Öğrenci No: 225541039
+
+Video linki: 
+
+
+public class Ödev1 {
+	public static void main (String [] args) {
+		/*
+		 * Aşağıdaki sayıları döngü kullanarak ekrana yazan programın kodunu yazınız.
+		 * 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+		 */
+		for (int a=1; a<=10; a++){
+			System.out.print(a+ ", ");
+		}
+	}
+}
+
+
+
+
+
+import java.util.Scanner;
+
+
+public class Ödev2 {
+	public static void main(String[] args){
+		
+		// 𝑎𝑥2 + 𝑏𝑥 + 𝑐  = 0 denklemin köklerini bulan programı Java dilinde yazınız.
+		Scanner sc = new Scanner(System.in);
+		System.out.println("(ax2+bx+c) ikinci dereceden denklemin sabit sayılarını giriniz.");
+		System.out.print("a değerini gir: ");
+		double a = sc.nextInt();
+		System.out.print("b değerini gir: ");
+		double b = sc.nextInt();
+		System.out.print("c değerini gir: ");
+		double c = sc.nextInt();
+		
+		double delta = (b*b)-(4*a*c);
+		
+		if (delta>0){
+			double x1 = ((-1*b) - Math.sqrt(delta)) / (2*a);
+			double x2 = ((-1*b) + Math.sqrt(delta)) / (2*a);
+			System.out.println("x1= " + x1 + "x2= " + x2);
+			
+		}
+		if (delta < 0){
+			System.out.println("Denklemin gerçel kökü yok.");
+		}
+		if (delta == 0){
+			double x = (-1*b) / (2*a);
+			System.out.println("Çakışık kökler var x1= x2= " + x);
+		}
+	}
+	
+}
+
+
+
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ödev3 {
+
+	public static void main(String[] args) {
+		//Taş-kağıt-makas oyununu oynayabilecek bir program yazınız. 
+		int kisi,pc;
+		
+		Random rnd=new Random();
+		pc=rnd.nextInt(3)+1; 
+		System.out.println("pc"+pc);
+		System.out.println("1.taş");
+		System.out.println("2.kağıt");
+		System.out.println("3.makas");
+		System.out.println("Lütfen seçiminizi yapınız");
+		Scanner gelenioku=new Scanner(System.in);
+		kisi=gelenioku.nextInt();
+		if(kisi!=1 && kisi!=2 && kisi!=3){
+			System.out.println("yanlış bir seçim yapılmıştır.");
+		}
+		else { 
+			
+			
+			if(pc==kisi){
+				System.out.println("Berabere!");
+			}
+			if(pc==1 && kisi==2){
+				System.out.println("Sen kazandın!");
+			}
+			if(pc==1 && kisi==3){
+				System.out.println("Yapay zeka kazandı!");
+			}
+			if(pc==2 && kisi==1){
+				System.out.println("Yapay zeka kazandı!");
+			}			
+			if(pc==2 && kisi==3){
+				System.out.println("Sen kazandın!");
+			}
+			if(pc==3 && kisi==1){
+				System.out.println("Sen kazandın!");
+			}
+			if(pc==3 && kisi==2){
+				System.out.println("Yapay zeka kazandı!");
+			}			
+		}
+	}
+}
+
+
+
+
+public class Ödev4 {
+  
+    public static void main(String[] args) { 
+    	//Ardışık sayıların toplamını gösteren bir kod yazınız.
+        int sayi = 400;
+        int toplam = 0; 
+        for(int i = 1; i <= sayi; ++i) {
+            toplam += i;
+        }
+         System.out.println("1-400 arasındaki sayıların toplamı = " + toplam);
+    } 
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Ödev5 {
+    
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        
+        int kenar1,kenar2;
+        
+        System.out.print("1. Kenarı giriniz: ");
+        kenar1 = scan.nextInt();
+        System.out.print("2. Kenarı giriniz: ");
+        kenar2 = scan.nextInt();
+        
+        System.out.println("Dikdörtgenin alanı = " + (kenar1 * kenar2));
+        System.out.println("Dikdörtgenin çevresi = " + (2 * (kenar1 + kenar2)));
+    }
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Ödev6 {
+    
+    public static void main(String[] args) {
+    	//Çemberin çevresini girilen yarıçap ile hesaplayan java kodunu yazın.
+        
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Çemberin yarı çapını giriniz: ");
+        int yarıcap = scan.nextInt();
+        
+        System.out.println("Çemberin çevresi = " + (2 * Math.PI * yarıcap));
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Ödev7 {
+    
+    public static void main(String[] args) {
+        //Beden kitle indeksinizi hesaplayan java kodu yazınız.
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Boyunuzu giriniz (1,75) : ");
+        float boy = scan.nextFloat();
+        System.out.print("Kilonuzu giriniz: ");
+        float kilo = scan.nextFloat();
+        
+        float bki = kilo / (boy*boy);
+        System.out.println("Beden Kitle İndeksiniz = " + bki);
+        
+        if(bki < 18) {
+            System.out.println("Zayıf");
+        }
+        else if(bki < 25) {
+            System.out.println("Normal");
+        }
+        else if(bki < 30) {
+            System.out.println("Hafif şişman");
+        }
+        else if(bki < 35) {
+            System.out.println("Sisman");
+        }
+        else {
+            System.out.println("Obez");
+        }
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Ödev8 {
+    
+    public static void main(String[] args) {
+        //Hesap makinesini java kodu ile yazınız.
+        Scanner scan = new Scanner(System.in);
+        
+        
+        System.out.print("1. Sayıyı giriniz: ");
+        int sayi1 = scan.nextInt();
+        System.out.print("2. Sayıyı giriniz: ");
+        int sayi2 = scan.nextInt();
+        
+        System.out.println("****İSLEMİNİZİ SEÇİNİZ***");
+        System.out.println("1. TOPLAMA");
+        System.out.println("2. ÇIKARMA");
+        System.out.println("3. ÇARPMA");
+        System.out.println("4. BÖLME");
+        
+        System.out.print("Secimininizi giriniz: ");
+        int secim = scan.nextInt();
+        
+        if(secim == 1) {
+            System.out.println("Toplama isleminin sonucu = " + (sayi1 + sayi2));
+        }
+        else if(secim == 2) {
+            System.out.println("Çıkarma isleminin sonucu = " + (sayi1 - sayi2));
+        }
+        else if(secim == 3) {
+            System.out.println("Carpma isleminin sonucu = " + (sayi1 * sayi2));
+        }
+        else if(secim == 4) {
+            System.out.println("Bölme isleminin sonucu = " + (float)sayi1 / sayi2);
+        }
+        else {
+            System.out.println("Yanlıs secim yaptınız. Seciminizi kontrol ediniz.");
+        }
+    }
+}
+
+
+
+
+
+
+public class Ödev9 {
+    
+    public static void main(String[] args) {
+        //1' den 10' a kadar olan çarpım tablosunu java kodu ile gösteriniz.
+        for(int i = 1; i <= 10; i++)
+        {
+            for(int j = 1; j < 11; j++)
+            {
+                System.out.println(i + "x" + j + "= " + (i * j));
+            }
+            System.out.println("\n");
+        }
+    }
+}
+
+
+
+
+import java.util.Scanner;
+
+public class Inspimo {
+	public static void main(String []args){
+		//Üçgenin bir kenarının diğer kenarlarıyla olan ilişkisini gösteren bir java kodu yazınız.
+		Scanner sc= new Scanner (System.in);
+		System.out.print("Üçgenin kenarı a girin: ");
+		int a = sc.nextInt();
+		System.out.print("Üçgenin kenarı b girin: ");
+		int b = sc.nextInt();
+		System.out.print("Üçgenin kenarı c girin: ");
+		int c = sc.nextInt();
+		int sayi1 = b-c;
+		int sayi2 = b+c;
+		System.out.println(Math.abs(sayi1) + " < " + a + " < " + sayi2);
+		if (sayi1 > sayi2 && sayi1 == a || sayi2 == a){
+			System.out.println("Üçgen oluşturulamadı.");
+		}
+		else {
+			int sayi3 = a-c;
+			int sayi4 = a+c;
+			System.out.println(Math.abs(sayi3) + " < " + b + " < " + sayi4);
+			if (sayi3 > sayi4 && sayi3 == b || sayi4 == b){
+				System.out.println("Üçgen oluşturulamadı.");
+			}
+			else {
+				int sayi5 = a-b;
+				int sayi6 = a+b;
+				System.out.println(Math.abs(sayi5) + " < " + c + " < " + sayi6);
+				if (sayi5 > sayi6 && sayi5 == c || sayi6 == c){
+					System.out.println("Üçgen oluşturulamadı.");
+				}
+			
+		}
+			
+		
+		}
+		
+	}
+}
